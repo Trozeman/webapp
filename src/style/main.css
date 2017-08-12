@@ -98,3 +98,26 @@ body .second-screen ul li .Distance {
   color: rgba(0, 0, 0, 0.54);
   font-size: 14px;
 }
+body .details-components {
+  padding: 0 5%;
+}
+body .details-components .TopLine {
+  padding: 15px 0;
+  margin: 0 -5%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+body .details-components .TopLine svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 5%;
+  margin-right: 15px;
+}
+body .details-components img {
+  max-width: 100%;
+}
+body .details-components .MainName {
+  font-size: 20px;
+}
