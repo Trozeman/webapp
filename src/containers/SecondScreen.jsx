@@ -3,19 +3,27 @@ import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import ListComponent from '../components/ListComponent';
+
 class SecondScreen extends React.Component {
   render() {
+    const { data } = this.props;
     return (
-      <div>
-        <div>SECOND</div>
-        <button onClick={() => this.props.changePage()}>/details</button>
-      </div>
+      <ListComponent placesList={data || []} />
     );
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/details')
-}, dispatch)
+const mapStateToProps = (state) => {
+  return {
+    data: state.data,
+  }
+}
 
-export default connect(null, mapDispatchToProps)(SecondScreen);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changePage: bindActionCreators(() => push('/details'), dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SecondScreen);
