@@ -26,7 +26,7 @@ export function fetchDataAction(data) {
       .then(res => {
         dispatch({
           type: 'FETCH_DATA_SUCCESS',
-          payload: res,
+          payload: res.body.data,
         })
       })
       .catch(error => {
