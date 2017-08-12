@@ -1,5 +1,5 @@
 import React from 'react';
-import { push } from 'react-router-redux'
+import { push, goBack } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -7,9 +7,9 @@ import ListComponent from '../components/ListComponent';
 
 class SecondScreen extends React.Component {
   render() {
-    const { data, match } = this.props;
+    const { data, match, goTo, goBack } = this.props;
     return (
-      <ListComponent placesList={data || []} goTo={this.props.goTo} />
+      <ListComponent placesList={data || []} goTo={goTo} goBack={goBack} />
     );
   }
 }
@@ -23,6 +23,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     goTo: (url) => dispatch(push(url)),
+    goBack: () => dispatch(goBack()),
   }
 }
 
