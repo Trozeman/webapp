@@ -1,6 +1,6 @@
 export default [
   {
-    id: Math.random(),
+    id: '1',
     name: 'Point Name',
     coordinates: {
       latitude: '300000000',
@@ -12,7 +12,7 @@ export default [
     price: '100'
   },
   {
-    id: Math.random(),
+    id: '2',
     name: 'Point Name1',
     coordinates: {
       latitude: '300000001',

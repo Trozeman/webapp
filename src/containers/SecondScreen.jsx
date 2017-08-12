@@ -12,8 +12,8 @@ class SecondScreen extends React.Component {
     return (
       <div>
         <ListComponent placesList={data || []} />
-        <Link to='/details/id1'>link to id1</Link>
-        <Link to='/details/id2'>link to id2</Link>
+        <Link to='/details/1'>link to id1</Link>
+        <Link to='/details/2'>link to id2</Link>
       </div>
     );
   }

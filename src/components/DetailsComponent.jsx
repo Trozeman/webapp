@@ -2,11 +2,13 @@ import React from 'react';
 
 class DetailsComponent extends React.Component {
   render() {
-    const { pointId } = this.props;
+    const { pointDetails } = this.props;
+    const { name, description } = pointDetails;
     return(
       <div>
         DetailsComponent
-        <div>{pointId}</div>
+        <div>{name}</div>
+        <div>{description}</div>
       </div>
     )
   }
