@@ -2,14 +2,19 @@ import React from 'react';
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { Link, Route } from 'react-router-dom'
 
 import ListComponent from '../components/ListComponent';
 
 class SecondScreen extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data, match } = this.props;
     return (
-      <ListComponent placesList={data || []} />
+      <div>
+        <ListComponent placesList={data || []} />
+        <Link to='/details/id1'>link to id1</Link>
+        <Link to='/details/id2'>link to id2</Link>
+      </div>
     );
   }
 }
