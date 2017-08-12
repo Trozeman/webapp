@@ -28,6 +28,7 @@ export function fetchDataAction(data) {
           type: 'FETCH_DATA_SUCCESS',
           payload: res.data,
         })
+        dispatch(push('/list'));
       })
       .catch(error => {
         dispatch({
