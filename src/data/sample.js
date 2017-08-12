@@ -9,7 +9,8 @@ export default [
     description: 'Blabla wejghw kjeg kerjg kgjr k regk jkjerhg kjh er',
     address: 'Степана Бандери 12/56',
     contacts: 'tel: 8 800 800 80 80',
-    price: '100'
+    price: '100',
+    distance: 350
   },
   {
     id: Math.random(),
@@ -21,6 +22,7 @@ export default [
     description: '1Blabla wejghw kjeg kerjg kgjr k regk jkjerhg kjh er',
     address: 'Степана Бандери 22/56',
     contacts: 'tel: 8 800 800 80 80',
-    price: '200'
+    price: '200',
+    distance: 150
   },
 ]

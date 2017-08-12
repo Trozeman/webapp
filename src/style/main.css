@@ -56,3 +56,45 @@ body .first-screen form #Go-btn:focus {
 body .first-screen form input {
   width: 100%;
 }
+body .second-screen {
+  padding: 0 5%;
+}
+body .second-screen .TopLine {
+  padding: 15px 0;
+  margin: 0 -5%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12);
+}
+body .second-screen .TopLine svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 5%;
+}
+body .second-screen ul {
+  margin: 0;
+  padding: 0;
+}
+body .second-screen ul li {
+  list-style: none;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+body .second-screen ul li .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .second-screen ul li .box .Name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+body .second-screen ul li .box .Price {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 16px;
+  line-height: 22px;
+}
+body .second-screen ul li .Distance {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px;
+}

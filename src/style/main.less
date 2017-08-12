@@ -15,6 +15,7 @@
 @inp-line:rgba(0,0,0,0.12);
 @bg-sc2:rgba(0,0,0,0.54);
 
+
 // First
 body{
 
@@ -76,6 +77,56 @@ body{
 
 	// Second 
 	.second-screen{
-		
+		padding: 0 5%;
+
+		.TopLine{			
+			padding: 15px 0;
+			margin: 0 -5%;
+			box-shadow: 0 4px 4px @inp-line;
+
+				svg{
+					width: 16px;
+					height: 16px;
+					margin-left: 5%;
+				}
+		}
+
+		ul{
+			margin: 0;
+			padding: 0;
+
+			li{
+				list-style: none;
+				margin-top: 10px;
+				padding: 10px 0;
+
+
+				.box{
+					display:flex;
+					justify-content: space-between;
+					align-items:center;
+					
+					.Name{
+						font-weight:500;
+						font-size:@inp-fo-si;
+						line-height: 22px;
+
+					}
+					.Price{
+						color:@bg-sc2;
+						font-size:@inp-fo-si;
+						line-height: 22px;
+
+					}
+				}
+
+				.Distance{
+					font-weight:500;
+					color:@bg-sc2;
+					font-size:@btn-fo-si;
+				}
+
+			}
+		}
 	}
 }
