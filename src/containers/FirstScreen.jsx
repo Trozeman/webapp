@@ -7,9 +7,15 @@ import { fetchDataAction } from '../actions/DataActions';
 import MainScreen from '../components/FirstScreen';
 
 class FirstScreen extends React.Component {
+
+  getData = ({ position, radius, price }) => {
+    console.log('getData ++++++');
+    this.props.fetchDataAction({ position, radius, price });
+  }
+
   render() {
     return (
-        <MainScreen />
+      <MainScreen getData={this.getData} />
     );
   }
 }
