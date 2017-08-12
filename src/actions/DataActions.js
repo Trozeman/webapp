@@ -24,6 +24,7 @@ export function fetchDataAction(data) {
 
     axios.get(`${API_PATH}/getZakladInRadius`, {data})
       .then(res => {
+        console.log('res', res)
         dispatch({
           type: 'FETCH_DATA_SUCCESS',
           payload: res.body.data,
