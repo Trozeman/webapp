@@ -9,9 +9,9 @@ const IconBack = (props) => (
   </div>
 );
 
-function PlaceComponent({ name, distance, price, id, goTo }) {
+function PlaceComponent({ name, distance, price, _id, goTo }) {
   return (
-    <li onClick={()=>goTo(`/details/${id}`)}>
+    <li onClick={()=>goTo(`/details/${_id}`)}>
         <div className="box">
           <div className="Name">{name}</div>
           <div className="Price">{price} гривень</div>
@@ -25,11 +25,11 @@ class ListComponent extends React.Component {
   render() {
     const { placesList, goBack } = this.props;
     const renderList = placesList && placesList.length
-      ? placesList.map((place)=> <PlaceComponent key={place.id}
+      ? placesList.map((place)=> <PlaceComponent key={place._id}
                                                  name={place.name}
                                                  distance={place.distance}
                                                  price={place.price}
-                                                 id={place.id}
+                                                 _id={place._id}
                                                  goTo={this.props.goTo} />)
       : null
 

@@ -8,7 +8,8 @@ class ThirdScreen extends React.Component {
 
   getDetails = (pointId) => {
     const { data } = this.props;
-    const pointDetails = data && data.find(({id})=>id===pointId);
+    console.log('dataaaaaaa', data)
+    const pointDetails = data && data.find(({_id})=>_id===pointId);
     return pointDetails || {};
   }
 
