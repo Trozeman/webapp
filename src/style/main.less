@@ -1,0 +1,81 @@
+/* Please do not use this import in production. You could download this font from here https://fontstorage.com/font/roboto */
+@import "http://fonts.fontstorage.com/import/roboto.css";
+/*
+	Roboto, 100, 100 italic, 300, 300 italic, 400, 400 italic, 500, 500 italic, 700, 700 italic, 900, 900 italic
+	*/
+
+
+// Constants
+
+@h1-fo-si:20px;
+@inp-fo-si:16px;
+@btn-fo-si:14px;
+@btn-color: #4cb5ab;
+@inp-line-active: green;
+@inp-line:rgba(0,0,0,0.12);
+@bg-sc2:rgba(0,0,0,0.54);
+
+// First
+body{
+
+	font-family: 'Roboto';
+	.first-screen{
+		background: #fff;
+		padding: 0 5%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+		h1{
+			margin-bottom: 20px;
+			text-align: center;
+			font-weight: 500;
+			font-size: @h1-fo-si;
+			align-self: flex-end;
+			width: 100%;
+
+		}
+
+		form{
+			margin: 0 auto;
+			align-self: flex-start;
+			#user-price,#user-distance{
+				margin-bottom: 15px;
+				font-size:@inp-fo-si;
+				background:none;
+				border-radius: 0;
+				border:none;
+				border-bottom: 2px solid @inp-line;
+				outline: none;
+				&:focus{
+					border:none;
+					border-bottom: 2px solid @inp-line-active;
+					outline: none;
+				}
+			}
+
+			#Go-btn{
+				background:none;
+				border-radius: 0;
+				border:none;
+				color:@btn-color;
+				font-size:@btn-fo-si;
+				&:focus{
+					outline:none;
+				}
+			}
+
+			input{
+				width: 100%;
+			}
+		}
+
+	}
+
+	// Second 
+	.second-screen{
+		
+	}
+}

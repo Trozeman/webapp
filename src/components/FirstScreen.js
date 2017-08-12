@@ -39,19 +39,23 @@ class FirstScreen extends Component {
 
     return (
       <div className="first-screen">
+      <h1>Hello world!</h1>
         <form onSubmit={this.submitFirstScreen}>
-          <input id="user-price"
+          <input type="number"
+                 id="user-price"
                  name="userPrice"
                  value={userPrice}
                  onChange={this.onChangeUserPriceHandler}
-                 placeholder="Enter price" />
-          <input id="user-distance"
+                 placeholder="Введіть сумму (Uah)" />
+          <input type="number"
+                 id="user-distance"
                  name="userDistance"
                  value={userDistance}
                  onChange={this.onChangeUserDistanceHandler}
-                 placeholder="Enter distance" />
-          <input value="Find places" 
-                 type="submit" />
+                 placeholder="Введіть дистанцію (m.)" />
+          <input id="Go-btn" 
+                value="Find places" 
+                type="submit" />
         </form>
       </div>
     )
