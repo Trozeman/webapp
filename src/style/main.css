@@ -6,6 +6,7 @@
 .details-components img {
   max-width: 100%;
   margin-bottom: 10px;
+  min-width: 100%;
 }
 .details-components .place-name {
   font-weight: 600;

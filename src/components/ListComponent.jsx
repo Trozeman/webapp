@@ -11,7 +11,7 @@ function PlaceComponent({ place, goTo }) {
   return (
     <Card style={{marginBottom: '20px'}} onTouchTap={()=>goTo(`/details/${id}`)}>
       <CardMedia>
-        <img src="http://placehold.it/600x250/" alt="" />
+        <img style={{borderRadius:'5px 5px 0px 0px', filter: 'brightness(50%)'}} src="http://placehold.it/600x250/" alt="" />
       </CardMedia>
       <CardTitle title={name} subtitle={<div>{`${price} гривень`} {`${distance} м`}</div>} />
     </Card>
@@ -22,7 +22,7 @@ class ListComponent extends React.Component {
   render() {
     const { placesList, goBack } = this.props;
     const renderList = placesList && placesList.length
-      ? placesList.map((place)=> <PlaceComponent key={place.id} place={place} goTo={this.props.goTo} />)
+      ? placesList.map((place)=> <PlaceComponent  key={place.id} place={place} goTo={this.props.goTo} />)
       : null
 
     return(
