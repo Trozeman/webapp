@@ -3,7 +3,7 @@ import React from 'react';
 class DetailsComponent extends React.Component {
   render() {
     const { pointDetails, goBack } = this.props;
-    const { name, description } = pointDetails;
+    const { name, description, image } = pointDetails;
     return(
       <div className="details-components">
         <div className="TopLine" onClick={()=>goBack()}>
@@ -12,7 +12,7 @@ class DetailsComponent extends React.Component {
           </svg>
           <p>Список послуг</p>
         </div>
-          <img src="http://placehold.it/600x450/" />
+          <img src={image} />
           <div className="MainName">{name}</div>
           <div className="MainDesc">{description}</div>
       </div>

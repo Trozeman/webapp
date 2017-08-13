@@ -10,7 +10,8 @@ export default [
     address: 'Степана Бандери 12/56',
     contacts: 'tel: 8 800 800 80 80',
     price: '100',
-    distance: 350
+    distance: 350,
+    image:'http://placehold.it/600x450/'
   },
   {
     id: '2',
@@ -23,6 +24,7 @@ export default [
     address: 'Степана Бандери 22/56',
     contacts: 'tel: 8 800 800 80 80',
     price: '200',
-    distance: 150
+    distance: 150,
+    image:'http://placehold.it/600x450/'
   },
 ]
