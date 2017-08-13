@@ -13,8 +13,10 @@ class FirstScreen extends Component {
     userDistance: 100,
   };
 
-  sliderPriceSend = false;
-  handleTimeout = '';
+
+  componentDidMount = () => {
+    this.submitFirstScreen();
+  }
 
   submitFirstScreen = () => {
     this.props.getData({
@@ -25,15 +27,26 @@ class FirstScreen extends Component {
   }
 
   handleCanSend = (canSend) => {
-    this.sliderPriceSend = canSend;
-    if (canSend) {
-      this.handleTimeout = setTimeout(()=>{
-        this.sliderPriceSend && this.submitFirstScreen();
-      }, SLIDER_DELAY)
-    } else {
-      clearTimeout(this.handleTimeout);
-    }
+    canSend && this.submitFirstScreen();
   }
+
+  // sliderPriceSend = false;
+  // handleTimeout = '';
+
+  // handleCanSend = (canSend) => {
+  //   this.sliderPriceSend = canSend;
+  //   if (canSend) {
+  //     this.handleTimeout = setTimeout(()=>{
+  //       this.sliderPriceSend && this.submitFirstScreen();
+  //     }, SLIDER_DELAY)
+  //   } else {
+  //     clearTimeout(this.handleTimeout);
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //   clearTimeout(this.handleTimeout);
+  // }
 
   handlePriceSlider = (value) => {
     this.setState({userPrice: value});
@@ -43,9 +56,6 @@ class FirstScreen extends Component {
     this.setState({userDistance: value});
   };
 
-  componentWillUnmount() {
-    clearTimeout(this.handleTimeout);
-  }
 
   render() {
     const { userPrice, userDistance } = this.state;
@@ -73,7 +83,7 @@ class FirstScreen extends Component {
           onDragStart={()=>this.handleCanSend(false)}
           onDragStop={()=>this.handleCanSend(true)}
         />
-        <FlatButton label="Find places" primary fullWidth={true} onTouchTap={this.submitFirstScreen} />
+        {/* <FlatButton label="Find places" primary fullWidth={true} onTouchTap={this.submitFirstScreen} /> */}
       </div>
     )
   }
