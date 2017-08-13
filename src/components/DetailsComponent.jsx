@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../style/main.css';
 class DetailsComponent extends React.Component {
   render() {
     const { pointDetails, goBack } = this.props;
