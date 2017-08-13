@@ -1,10 +1,11 @@
 import React from 'react';
+import LogoImage from '../images/takemymoney-logo.png';
 
 const Logo = (props) => {
   return (
-    <div style={{height:'60px'}} {...props}>
+    <div style={{marginTop:'40px'}} {...props}>
       <div style={{width: '100%', height: '100%', display:'flex', justifyContent: 'center', alignItems:'center'}}>
-        LOGO
+        <img src={LogoImage} style={{width:'40%'}} />
       </div>
     </div>
   )

@@ -26,7 +26,8 @@ class FirstScreen extends Component {
 
   submitFirstScreen = () => {
     this.props.getData({
-      position: `${this.state.latitude},${this.state.longitude}`,
+      // position: `${this.state.latitude},${this.state.longitude}`,
+      position: '50.6187682,26.258955099999998',
       radius: this.state.userDistance,
       price: this.state.userPrice,
     });
@@ -83,7 +84,7 @@ class FirstScreen extends Component {
               Витратити&nbsp;
             </span>
             <span style={{fontSize: 13, fontWeight: 'bold', color:'#00A3D6'}}>
-              $&nbsp;{this.state.userPrice} грн.
+              &nbsp;{this.state.userPrice} грн.
             </span>
           </div>
 
@@ -92,7 +93,7 @@ class FirstScreen extends Component {
             min={0}
             max={10000}
             step={100}
-            power={4}            
+            power={4}
             value={this.state.userPrice}
             onChange={this.handlePriceSlider}
             onDragStart={()=>this.handleCanSend(false)}
