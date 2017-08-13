@@ -1,9 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Take My Money",
+  "name": "Take My Money",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "/App_Icon.png",
       "sizes": "192x192",
       "type": "image/png"
     }

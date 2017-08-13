@@ -7,9 +7,9 @@ import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'm
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 
 function PlaceComponent({ place, goTo }) {
-  const { name, distance, price, id, description } = place
+  const { name, distance, price, _id, description } = place
   return (
-    <Card style={{marginBottom: '20px'}} onTouchTap={()=>goTo(`/details/${id}`)}>
+    <Card style={{marginBottom: '20px'}} onTouchTap={()=>goTo(`/details/${_id}`)}>
       <CardMedia>
         <img style={{borderRadius:'5px 5px 0px 0px', filter: 'brightness(50%)'}} src="http://placehold.it/600x250/" alt="" />
       </CardMedia>
@@ -22,7 +22,7 @@ class ListComponent extends React.Component {
   render() {
     const { placesList, goBack } = this.props;
     const renderList = placesList && placesList.length
-      ? placesList.map((place)=> <PlaceComponent   key={place.id} place={place} goTo={this.props.goTo} />)
+      ? placesList.map((place)=> <PlaceComponent  key={place._id} place={place} goTo={this.props.goTo} />)
       : null
 
     return(

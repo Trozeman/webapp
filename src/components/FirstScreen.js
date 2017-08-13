@@ -28,7 +28,7 @@ class FirstScreen extends Component {
     this.props.getData({
       position: `${this.state.latitude},${this.state.longitude}`,
       radius: this.state.userDistance,
-      price: this.state.userDistance,
+      price: this.state.userPrice,
     });
   }
 

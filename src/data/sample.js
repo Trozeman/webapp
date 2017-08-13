@@ -1,6 +1,6 @@
 export default [
   {
-    id: '1',
+    _id: '1',
     name: 'Point Name',
     coordinates: {
       latitude: '300000000',
@@ -14,7 +14,7 @@ export default [
     image:'http://placehold.it/600x450/'
   },
   {
-    id: '2',
+    _id: '2',
     name: 'Point Name1',
     coordinates: {
       latitude: '300000001',
