@@ -10,155 +10,34 @@
 @h1-fo-si:20px;
 @inp-fo-si:16px;
 @btn-fo-si:14px;
-@btn-color: #4cb5ab;
+@btn-color: #00bcd4;
 @inp-line-active: green;
 @inp-line:rgba(0,0,0,0.12);
 @bg-sc2:rgba(0,0,0,0.54);
 
+.details-components{
 
-// First
-body{
+  img{
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
 
-	font-family: 'Roboto';
-	.first-screen{
-		background: #fff;
-		padding: 0 5%;
-		height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-
-		h1{
-			margin-bottom: 20px;
-			text-align: center;
-			font-weight: 500;
-			font-size: @h1-fo-si;
-			align-self: flex-end;
-			width: 100%;
-
-		}
-
-		form{
-			margin: 0 auto;
-			align-self: flex-start;
-			#user-price,#user-distance{
-				margin-bottom: 15px;
-				font-size:@inp-fo-si;
-				background:none;
-				border-radius: 0;
-				border:none;
-				border-bottom: 2px solid @inp-line;
-				outline: none;
-				&:focus{
-					border:none;
-					border-bottom: 2px solid @inp-line-active;
-					outline: none;
-				}
-			}
-
-			#Go-btn{
-				background:none;
-				border-radius: 0;
-				border:none;
-				color:@btn-color;
-				font-size:@btn-fo-si;
-				&:focus{
-					outline:none;
-				}
-			}
-
-			input{
-				width: 100%;
-			}
-		}
-
-	}
-
-	// Second 
-	.second-screen{
-		padding: 0 5%;
-
-		.TopLine{			
-			padding: 15px 0;
-			margin: 0 -5%;
-			box-shadow: 0 4px 4px @inp-line;
-
-				svg{
-					width: 16px;
-					height: 16px;
-					margin-left: 5%;
-				}
-		}
-
-		ul{
-			margin: 0;
-			padding: 0;
-
-			li{
-				list-style: none;
-				margin-top: 10px;
-				padding: 10px 0;
-
-
-				.box{
-					display:flex;
-					justify-content: space-between;
-					align-items:center;
-					
-					.Name{
-						font-weight:500;
-						font-size:@inp-fo-si;
-						line-height: 22px;
-
-					}
-					.Price{
-						color:@bg-sc2;
-						font-size:@inp-fo-si;
-						line-height: 22px;
-
-					}
-				}
-
-				.Distance{
-					font-weight:500;
-					color:@bg-sc2;
-					font-size:@btn-fo-si;
-				}
-
-			}
-		}
-	}
-
-	// Details components
-	.details-components{
-		padding: 0 5%;
-
-		.TopLine{			
-			padding: 15px 0;
-			margin: 0 -5%;
-			box-shadow: 0 4px 4px @inp-line;
-			margin-bottom: 15px;
-			display:flex;
-			align-items:center;
-
-				svg{
-					width: 16px;
-					height: 16px;
-					margin-left: 5%;
-					margin-right: 15px;
-				}
-		}
-
-		img{
-			max-width: 100%
-		}
-
-		.MainName{
-			font-size:@h1-fo-si;
-		}
-		.MainDesc{
-
-		}
-	}	
+  .place-name{
+    font-weight: 600;
+    font-size: @h1-fo-si;
+    padding: 8px 25px;
+  }
+  .place-address{
+	color: @bg-sc2;
+	padding: 5px 25px;
+  }
+  .place-price{
+	color:@btn-color;
+	padding: 5px 25px;
+    font-weight: 600;
+  }
+  .place-description{
+	color:@bg-sc2;
+	padding: 15px 25px;
+  }
 }
