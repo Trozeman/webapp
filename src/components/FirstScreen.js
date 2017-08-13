@@ -1,71 +1,79 @@
 import React, { Component } from 'react';
+import FlatButton from 'material-ui/FlatButton';
+import Slider from 'material-ui/Slider';
+
+import PowerSlider from './PowerSlider'
+
+const SLIDER_DELAY = 1000;
 
 class FirstScreen extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      userPrice: '',
-      userDistance: ''
-    };
+  state = {
+    userPrice: 200,
+    userDistance: 100,
+  };
 
-    this.onChangeUserPriceHandler = this.onChangeUserPriceHandler.bind(this);
-    this.onChangeUserDistanceHandler = this.onChangeUserDistanceHandler.bind(this);
-  }
+  sliderPriceSend = false;
+  handleTimeout = '';
 
-  submitFirstScreen = (event) => {
-    event.preventDefault();
-    //TODO call to api
-
+  submitFirstScreen = () => {
     this.props.getData({
       position: '',
       radius: this.state.userDistance,
       price: this.state.userDistance,
     });
-
   }
 
-  onChangeUserPriceHandler(event) {
-    const userPrice = event.target.value;
-
-    this.setState({
-      userPrice: userPrice
-    })
+  handleCanSend = (canSend) => {
+    this.sliderPriceSend = canSend;
+    if (canSend) {
+      this.handleTimeout = setTimeout(()=>{
+        this.sliderPriceSend && this.submitFirstScreen();
+      }, SLIDER_DELAY)
+    } else {
+      clearTimeout(this.handleTimeout);
+    }
   }
 
-  onChangeUserDistanceHandler(event) {
-    const userDistance = event.target.value;
+  handlePriceSlider = (value) => {
+    this.setState({userPrice: value});
+  };
 
-    this.setState({
-      userDistance: userDistance
-    })
+  handleDistanceSlider = (value) => {
+    this.setState({userDistance: value});
+  };
+
+  componentWillUnmount() {
+    clearTimeout(this.handleTimeout);
   }
 
   render() {
     const { userPrice, userDistance } = this.state;
-
     return (
-      <div className="first-screen">
-      <h1>Hello world!</h1>
-                <form onSubmit={this.submitFirstScreen}>
-          <input type="number"
-                 id="user-price"
-                 name="userPrice"
-                 value={userPrice}
-                 onChange={this.onChangeUserPriceHandler}
-                 placeholder="Введіть сумму (Uah)" />
-                 
-          <input type="number"
-                 id="user-distance"
-                 name="userDistance"
-                 value={userDistance}
-                 onChange={this.onChangeUserDistanceHandler}
-                 placeholder="Введіть дистанцію (m.)" />
-
-          <input id="Go-btn" 
-                value="Find places" 
-                type="submit" />
-        </form>
+      <div style={{padding:10}}>
+        <div>{`Витратити ${this.state.userPrice} грн.`}</div>
+        <PowerSlider
+          min={0}
+          max={10000}
+          step={100}
+          power={4}
+          value={this.state.userPrice}
+          onChange={this.handlePriceSlider}
+          onDragStart={()=>this.handleCanSend(false)}
+          onDragStop={()=>this.handleCanSend(true)}
+        />
+        <div>{`Не далі як ${this.state.userDistance} м`}</div>
+        <PowerSlider
+          min={0}
+          max={100000}
+          step={100}
+          power={7}
+          value={this.state.userDistance}
+          onChange={this.handleDistanceSlider}
+          onDragStart={()=>this.handleCanSend(false)}
+          onDragStop={()=>this.handleCanSend(true)}
+        />
+        <FlatButton label="Find places" primary fullWidth={true} onTouchTap={this.submitFirstScreen} />
       </div>
     )
   }
