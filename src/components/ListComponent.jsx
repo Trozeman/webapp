@@ -19,7 +19,6 @@ function PlaceComponent({ place, goTo }) {
         <img src="https://unsplash.it/200/100/?random" alt="" />
       </CardMedia>
       <CardTitle title={name} subtitle={<div>{`${price} гривень`} {`${distance} м`}</div>} />
-      <CardText>{description}</CardText>
     </Card>
   );
 }
@@ -27,21 +26,12 @@ function PlaceComponent({ place, goTo }) {
 class ListComponent extends React.Component {
   render() {
     const { placesList, goBack } = this.props;
-    // const renderList = placesList && placesList.length
-    //   ? placesList.map((place)=> <PlaceComponent key={place.id}
-    //                                              name={place.name}
-    //                                              distance={place.distance}
-    //                                              price={place.price}
-    //                                              id={place.id}
-    //                                              goTo={this.props.goTo} />)
-    //   : null
-
     const renderList = placesList && placesList.length
       ? placesList.map((place)=> <PlaceComponent key={place.id} place={place} goTo={this.props.goTo} />)
       : null
 
     return(
-      <div>
+      <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
         {/* <AppBar
           title="Home"
           iconElementLeft={<IconButton><ArrowBack /></IconButton>}

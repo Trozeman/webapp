@@ -19,7 +19,7 @@ class FirstScreen extends React.Component {
       <div>
         <AppBar
           style={{position:'fixed'}}
-          title="Home"
+          title="Take my money"
           // iconElementLeft={<IconButton><ArrowBack /></IconButton>}
           // onLeftIconButtonTouchTap={()=>goBack()}
         />
