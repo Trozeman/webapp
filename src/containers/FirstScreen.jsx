@@ -8,6 +8,8 @@ import { fetchDataAction } from '../actions/DataActions';
 import MainScreen from '../components/FirstScreen';
 import SecondScreen from '../containers/SecondScreen';
 
+import Logo from '../components/Logo';
+
 class FirstScreen extends React.Component {
 
   getData = ({ position, radius, price }) => {
@@ -17,18 +19,16 @@ class FirstScreen extends React.Component {
   render() {
     return (
       <div>
-        {/* <AppBar
-          style={{position:'fixed'}}
-          title="Take my money"
-          // iconElementLeft={<IconButton><ArrowBack /></IconButton>}
-          // onLeftIconButtonTouchTap={()=>goBack()}
-        />
-        <div style={{height:'66px'}}></div> */}
-          <div style={{position:'fixed', width:'100%', zIndex:'1000'}}>
-            <MainScreen getData={this.getData}/>
-          </div>
-          <div style={{height:'100px'}}></div>
+
+        <div style={{position:'fixed', width:'100%', height: '100px', zIndex:'1000'}}>
+          <MainScreen getData={this.getData}/>
+        </div>
+        <div style={{height:'100px'}}></div>
+
+        <Logo />
+
         <SecondScreen />
+
       </div>
     );
   }

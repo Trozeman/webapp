@@ -60,40 +60,54 @@ class FirstScreen extends Component {
   render() {
     const { userPrice, userDistance } = this.state;
     return (
-      <Paper style={{padding: '10px'}}>
-        <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
-          <div style={{fontSize: 13, fontWeight: 'bold'}}>
-            {`Витратити ${this.state.userPrice} грн.`}
+      <Paper
+        rounded={false}
+        style={{
+          paddingLeft: '10px',
+          paddingRight: '10px',
+          height:'100%',
+          dispaly:'flex',
+          justifyContent:'center',
+          alignItems:'center'
+        }}
+      >
+
+          <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <div style={{fontSize: 13, fontWeight: 'bold'}}>
+              {`Витратити ${this.state.userPrice} грн.`}
+            </div>
           </div>
-        </div>
-        <PowerSlider
-          sliderStyle={{margin:0}}
-          min={0}
-          max={10000}
-          step={100}
-          power={4}
-          value={this.state.userPrice}
-          onChange={this.handlePriceSlider}
-          onDragStart={()=>this.handleCanSend(false)}
-          onDragStop={()=>this.handleCanSend(true)}
-        />
-        <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
-          <div style={{fontSize: 13, fontWeight: 'bold'}}>
-            {`Не далі як ${this.state.userDistance} м`}
+
+          <PowerSlider
+            sliderStyle={{margin:0}}
+            min={0}
+            max={10000}
+            step={100}
+            power={4}
+            value={this.state.userPrice}
+            onChange={this.handlePriceSlider}
+            onDragStart={()=>this.handleCanSend(false)}
+            onDragStop={()=>this.handleCanSend(true)}
+          />
+
+          <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
+            <div style={{fontSize: 13, fontWeight: 'bold'}}>
+              {`Не далі як ${this.state.userDistance} м`}
+            </div>
           </div>
-        </div>
-        <PowerSlider
-          sliderStyle={{margin:0}}
-          min={0}
-          max={100000}
-          step={100}
-          power={7}
-          value={this.state.userDistance}
-          onChange={this.handleDistanceSlider}
-          onDragStart={()=>this.handleCanSend(false)}
-          onDragStop={()=>this.handleCanSend(true)}
-        />
-        {/* <FlatButton label="Find places" primary fullWidth={true} onTouchTap={this.submitFirstScreen} /> */}
+
+          <PowerSlider
+            sliderStyle={{margin:0}}
+            min={0}
+            max={100000}
+            step={100}
+            power={7}
+            value={this.state.userDistance}
+            onChange={this.handleDistanceSlider}
+            onDragStart={()=>this.handleCanSend(false)}
+            onDragStop={()=>this.handleCanSend(true)}
+          />
+
       </Paper>
     )
   }

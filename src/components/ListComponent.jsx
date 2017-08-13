@@ -9,14 +9,9 @@ import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 function PlaceComponent({ place, goTo }) {
   const { name, distance, price, id, description } = place
   return (
-    // <ListItem
-    //   onTouchTap={()=>goTo(`/details/${id}`)}
-    //   primaryText={name}
-    //   secondaryText={<div>{`${price} гривень`} {`${distance} м`}</div>}
-    // />
     <Card style={{marginBottom: '20px'}} onTouchTap={()=>goTo(`/details/${id}`)}>
       <CardMedia>
-        <img src="https://unsplash.it/200/100/?random" alt="" />
+        <img src="http://placehold.it/600x250/" alt="" />
       </CardMedia>
       <CardTitle title={name} subtitle={<div>{`${price} гривень`} {`${distance} м`}</div>} />
     </Card>
@@ -32,14 +27,7 @@ class ListComponent extends React.Component {
 
     return(
       <div style={{paddingLeft:'10px', paddingRight:'10px'}}>
-        {/* <AppBar
-          title="Home"
-          iconElementLeft={<IconButton><ArrowBack /></IconButton>}
-          onLeftIconButtonTouchTap={()=>goBack()}
-        /> */}
-        {/* <List> */}
-          {renderList}
-        {/* </List> */}
+        {renderList}
       </div>
     );
   }
