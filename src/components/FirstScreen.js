@@ -72,9 +72,9 @@ class FirstScreen extends Component {
           paddingLeft: '10px',
           paddingRight: '10px',
           height:'100%',
-          dispaly:'flex',
-          justifyContent:'center',
-          alignItems:'center'
+          display:'flex',
+          flexDirection: 'column',
+          justifyContent:'center'
         }}
       >
 

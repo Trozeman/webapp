@@ -22,7 +22,7 @@ class ListComponent extends React.Component {
   render() {
     const { placesList, goBack } = this.props;
     const renderList = placesList && placesList.length
-      ? placesList.map((place)=> <PlaceComponent  key={place.id} place={place} goTo={this.props.goTo} />)
+      ? placesList.map((place)=> <PlaceComponent   key={place.id} place={place} goTo={this.props.goTo} />)
       : null
 
     return(
