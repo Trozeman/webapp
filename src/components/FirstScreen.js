@@ -10,7 +10,7 @@ class FirstScreen extends Component {
 
   state = {
     userPrice: 200,
-    userDistance: 100,
+    userDistance: 1000,
     latitude: 0,
     longitude: 0,
   };
