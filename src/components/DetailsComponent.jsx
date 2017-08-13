@@ -3,12 +3,15 @@ import React from 'react';
 class DetailsComponent extends React.Component {
   render() {
     const { pointDetails, goBack } = this.props;
-    const { name, description, image } = pointDetails;
+    const { name, description, image, address, price } = pointDetails;
+    
     return(
       <div className="details-components">
         <img src={image} />
-        <div className="MainName">{name}</div>
-        <div className="MainDesc">{description}</div>
+        <div className="place-name">{name}</div>
+        <div className="place-address">{address}</div>
+        <div className="place-price">{`Середній чек: ${price} гривень`}</div>
+        <div className="place-description">{description}</div>
       </div>
     )
   }
