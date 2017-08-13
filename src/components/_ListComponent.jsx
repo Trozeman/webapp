@@ -30,6 +30,7 @@ class ListComponent extends React.Component {
     return(
       <div>
         <AppBar
+          style{{backgroundColor:'#fff'}}
           title="Home"
           iconElementLeft={<IconButton><ArrowBack /></IconButton>}
           onLeftIconButtonTouchTap={()=>goBack()}

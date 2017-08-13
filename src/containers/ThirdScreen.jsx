@@ -26,8 +26,12 @@ class ThirdScreen extends React.Component {
       <div>
         <div style={{display: 'fixed'}}>
           <AppBar
+          style={{backgroundColor:'#fff'}}
+          titleStyle={{color:'rgba(0,0,0,0.80)', fontWeight:'500'}}
+          
+        
             title="Home"
-            iconElementLeft={<IconButton><ArrowBack /></IconButton>}
+            iconElementLeft={<IconButton><ArrowBack color='rgba(0,0,0,0.40)' /></IconButton>}
             onLeftIconButtonTouchTap={()=>goBack()}
           />
         </div>
