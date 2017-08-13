@@ -89,7 +89,7 @@ class FirstScreen extends Component {
             min={0}
             max={10000}
             step={100}
-            power={4}
+            power={4}            
             value={this.state.userPrice}
             onChange={this.handlePriceSlider}
             onDragStart={()=>this.handleCanSend(false)}
