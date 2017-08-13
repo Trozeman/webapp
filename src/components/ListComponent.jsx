@@ -1,23 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
-const IconBack = (props) => (
-  <div {...props}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="2231 776 16 16">
-      <path id="path" d="M20,11H7.8l5.6-5.6L12,4,4,12l8,8,1.4-1.4L7.8,13H20V11Z" transform="translate(2227 772)"/>
-    </svg>
-  </div>
-);
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import { List, ListItem } from 'material-ui/List';
+import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 
 function PlaceComponent({ name, distance, price, id, goTo }) {
   return (
-    <li onClick={()=>goTo(`/details/${id}`)}>
-        <div className="box">
-          <div className="Name">{name}</div>
-          <div className="Price">{price} гривень</div>
-        </div>
-        <div className="Distance">{distance+" m."}</div>
-    </li>
+    <ListItem
+      onTouchTap={()=>goTo(`/details/${id}`)}
+      primaryText={name}
+      secondaryText={<div>{`${price} гривень`} {`${distance} м`}</div>}
+    />
   );
 }
 
@@ -34,13 +28,15 @@ class ListComponent extends React.Component {
       : null
 
     return(
-      <div className="second-screen">
-      <div className="TopLine">
-      <IconBack onClick={()=>goBack()}/>
-      </div>
-        <ul>
+      <div>
+        <AppBar
+          title="Home"
+          iconElementLeft={<IconButton><ArrowBack /></IconButton>}
+          onLeftIconButtonTouchTap={()=>goBack()}
+        />
+        <List>
           {renderList}
-        </ul>
+        </List>
       </div>
     );
   }
