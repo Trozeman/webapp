@@ -12,6 +12,7 @@ class ThirdScreen extends React.Component {
 
   getDetails = (pointId) => {
     const { data } = this.props;
+
     const pointDetails = data && data.find(({id})=>id===pointId);
     return pointDetails || {};
   }
@@ -20,6 +21,7 @@ class ThirdScreen extends React.Component {
     const { match, goBack } = this.props;
     const pointId = match.params.pointId;
     const pointDetails = this.getDetails(pointId);
+
     return (
       <div>
         <div style={{display: 'fixed'}}>
