@@ -11,16 +11,22 @@ class FirstScreen extends Component {
   state = {
     userPrice: 200,
     userDistance: 100,
+    latitude: 0,
+    longitude: 0,
   };
 
 
   componentDidMount = () => {
-    this.submitFirstScreen();
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({latitude: position.coords.latitude, longitude:position.coords.longitude}, ()=>{
+        this.submitFirstScreen();
+      });
+    });
   }
 
   submitFirstScreen = () => {
     this.props.getData({
-      position: '',
+      position: `${this.state.latitude},${this.state.longitude}`,
       radius: this.state.userDistance,
       price: this.state.userDistance,
     });

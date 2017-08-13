@@ -3,11 +3,13 @@ import { push } from 'react-router-redux';
 
 import sampleData from '../data/sample.js';
 
-const API_PATH = '/api/v1';
+const API_PATH = '/api';
 
 
 export function fetchDataAction(data) {
   return (dispatch) => {
+
+    console.log('DDDAAAA', data);
 
     dispatch({
       type: 'FETCH_DATA',
@@ -23,17 +25,17 @@ export function fetchDataAction(data) {
       // dispatch(push('/list'));
     }, 1000);
 
-    // axios.get(`${API_PATH}/someapi`, {data});
+    // axios.post(`${API_PATH}/getZakladInRadius`, {data})
     //   .then(res => {
+    //     console.log('res', res);
     //     dispatch({
     //       type: 'FETCH_DATA_SUCCESS',
-    //       payload: res,
+    //       payload: res.data,
     //     })
-    //     dispatch(push('/list'));
     //   })
     //   .catch(error => {
     //     dispatch({
-    //       type: FETCH_DATA_FAILURE,
+    //       type: 'FETCH_DATA_FAILURE',
     //       error,
     //     })
     //   })
