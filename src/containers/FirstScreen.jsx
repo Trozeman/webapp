@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+import AppBar from 'material-ui/AppBar';
 
 import { fetchDataAction } from '../actions/DataActions';
 
 import MainScreen from '../components/FirstScreen';
+import SecondScreen from '../containers/SecondScreen';
 
 class FirstScreen extends React.Component {
 
@@ -14,7 +16,17 @@ class FirstScreen extends React.Component {
 
   render() {
     return (
-      <MainScreen getData={this.getData} />
+      <div>
+        <AppBar
+          style={{position:'fixed'}}
+          title="Home"
+          // iconElementLeft={<IconButton><ArrowBack /></IconButton>}
+          // onLeftIconButtonTouchTap={()=>goBack()}
+        />
+        <div style={{height:'100px'}}></div>
+        <MainScreen getData={this.getData} />
+        <SecondScreen />
+      </div>
     );
   }
 }

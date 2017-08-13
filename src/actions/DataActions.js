@@ -15,12 +15,13 @@ export function fetchDataAction(data) {
     })
 
     setTimeout(()=>{
+      console.log('FETCH_DATA_SUCCESS')
       dispatch({
         type: 'FETCH_DATA_SUCCESS',
         payload: sampleData,
       });
-      dispatch(push('/list'));
-    }, 2000);
+      // dispatch(push('/list'));
+    }, 1000);
 
     // axios.get(`${API_PATH}/someapi`, {data});
     //   .then(res => {
@@ -28,6 +29,7 @@ export function fetchDataAction(data) {
     //       type: 'FETCH_DATA_SUCCESS',
     //       payload: res,
     //     })
+    //     dispatch(push('/list'));
     //   })
     //   .catch(error => {
     //     dispatch({
