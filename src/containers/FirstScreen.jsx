@@ -17,14 +17,17 @@ class FirstScreen extends React.Component {
   render() {
     return (
       <div>
-        <AppBar
+        {/* <AppBar
           style={{position:'fixed'}}
           title="Take my money"
           // iconElementLeft={<IconButton><ArrowBack /></IconButton>}
           // onLeftIconButtonTouchTap={()=>goBack()}
         />
-        <div style={{height:'66px'}}></div>
-        <MainScreen getData={this.getData} />
+        <div style={{height:'66px'}}></div> */}
+          <div style={{position:'fixed', width:'100%', zIndex:'1000'}}>
+            <MainScreen getData={this.getData}/>
+          </div>
+          <div style={{height:'100px'}}></div>
         <SecondScreen />
       </div>
     );

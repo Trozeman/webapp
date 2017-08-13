@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FlatButton from 'material-ui/FlatButton';
-import Slider from 'material-ui/Slider';
+import Paper from 'material-ui/Paper';
 
 import PowerSlider from './PowerSlider'
 
@@ -60,8 +60,12 @@ class FirstScreen extends Component {
   render() {
     const { userPrice, userDistance } = this.state;
     return (
-      <div style={{padding: 10}}>
-        <div>{`Витратити ${this.state.userPrice} грн.`}</div>
+      <Paper style={{padding: '10px'}}>
+        <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
+          <div style={{fontSize: 13, fontWeight: 'bold'}}>
+            {`Витратити ${this.state.userPrice} грн.`}
+          </div>
+        </div>
         <PowerSlider
           sliderStyle={{margin:0}}
           min={0}
@@ -73,7 +77,11 @@ class FirstScreen extends Component {
           onDragStart={()=>this.handleCanSend(false)}
           onDragStop={()=>this.handleCanSend(true)}
         />
-        <div>{`Не далі як ${this.state.userDistance} м`}</div>
+        <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
+          <div style={{fontSize: 13, fontWeight: 'bold'}}>
+            {`Не далі як ${this.state.userDistance} м`}
+          </div>
+        </div>
         <PowerSlider
           sliderStyle={{margin:0}}
           min={0}
@@ -86,7 +94,7 @@ class FirstScreen extends Component {
           onDragStop={()=>this.handleCanSend(true)}
         />
         {/* <FlatButton label="Find places" primary fullWidth={true} onTouchTap={this.submitFirstScreen} /> */}
-      </div>
+      </Paper>
     )
   }
 }
