@@ -60,9 +60,10 @@ class FirstScreen extends Component {
   render() {
     const { userPrice, userDistance } = this.state;
     return (
-      <div style={{padding:10}}>
+      <div style={{padding: 10}}>
         <div>{`Витратити ${this.state.userPrice} грн.`}</div>
         <PowerSlider
+          sliderStyle={{margin:0}}
           min={0}
           max={10000}
           step={100}
@@ -74,6 +75,7 @@ class FirstScreen extends Component {
         />
         <div>{`Не далі як ${this.state.userDistance} м`}</div>
         <PowerSlider
+          sliderStyle={{margin:0}}
           min={0}
           max={100000}
           step={100}

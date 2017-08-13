@@ -23,7 +23,7 @@ class FirstScreen extends React.Component {
           // iconElementLeft={<IconButton><ArrowBack /></IconButton>}
           // onLeftIconButtonTouchTap={()=>goBack()}
         />
-        <div style={{height:'100px'}}></div>
+        <div style={{height:'66px'}}></div>
         <MainScreen getData={this.getData} />
         <SecondScreen />
       </div>
