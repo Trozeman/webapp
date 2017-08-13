@@ -79,9 +79,12 @@ class FirstScreen extends Component {
       >
 
           <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <div style={{fontSize: 13, fontWeight: 'bold'}}>
-              {`Витратити ${this.state.userPrice} грн.`}
-            </div>
+          <span style={{fontSize: 13, fontWeight: 'bold', color:'rgba(0,0,0,0.40)'}}>
+              Витратити&nbsp;
+            </span>
+            <span style={{fontSize: 13, fontWeight: 'bold', color:'#00A3D6'}}>
+              $&nbsp;{this.state.userPrice} грн.
+            </span>
           </div>
 
           <PowerSlider
@@ -97,9 +100,12 @@ class FirstScreen extends Component {
           />
 
           <div style={{display:'flex', justifyContent:'center', itemsAlign:'center'}}>
-            <div style={{fontSize: 13, fontWeight: 'bold'}}>
-              {`Не далі як ${this.state.userDistance} м`}
-            </div>
+            <span style={{fontSize: 13, fontWeight: 'bold', color:'rgba(0,0,0,0.40)'}}>
+              Не далі як&nbsp;
+            </span>
+            <span style={{fontSize: 13, fontWeight: 'bold', color:'#7AC218'}}>
+              {this.state.userDistance} m.
+            </span>
           </div>
 
           <PowerSlider
